@@ -94,6 +94,9 @@ function Search(props) {
         results.push(essentialsObj);
         return null;
       });
+      if (results.length === 0) {
+        results.push({type: 'not_found'});
+      }
       setResults([...results]);
     };
 
@@ -183,6 +186,12 @@ function Search(props) {
                     </div>
                   </div>
                 </Link>
+              );
+            } else if (result.type === 'not_found') {
+              return (
+                <div className="result no-results">
+                  <div className="result-name">No Results Found</div>
+                </div>
               );
             } else {
               return (

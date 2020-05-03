@@ -1087,6 +1087,10 @@ h6 {
       padding: 1rem;
       transition: all .2s ease-in-out;
 
+      &.no-results {
+        justify-content: space-around;
+      }
+      
       &:hover {
         background: $gray-light;
       }
